@@ -1,14 +1,44 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Map
     </ion-title>
+    <ion-buttons end>
+      <!-- <button ion-button (click)="addMarker()"><ion-icon name="add"></ion-icon>Add Marker</button> -->
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+<!-- <button ion-button (click)="openNextPage()" id="openNextPage()">Lihat Peta</button> -->
+
+    <ion-card>
+        <ion-list inset>
+            <ion-item *ngFor="let user of users">
+               <!-- <h1>{{ user.id_lokasi }}</h1>
+               <p>{{ user.namaTempat}}</p> -->
+
+            </ion-item>
+        </ion-list>
+
+          <form (ngSubmit)="saveUser()">
+                <ion-item>
+                  <ion-label color="primary" floating>nama</ion-label>
+                  <ion-input [(ngModel)]="user.namaTempat" name="namaTempat"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label color="primary" floating>latitude</ion-label>
+                    <ion-input [(ngModel)]="user.latitude" name="latitude"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-label color="primary" floating> longlitude</ion-label>
+                      <ion-input [(ngModel)]="user.longitude" name="longitude"></ion-input>
+                    </ion-item>
+                    <button ion-button full type="submit">Simpan</button>
+                  </form>
+
+
+    </ion-card>
+
 </ion-content>
