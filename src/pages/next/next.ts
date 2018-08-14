@@ -19,8 +19,8 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 })
 export class NextPage {
   //
-  @ViewChild('map') mapElement: ElementRef;
-  map: any;
+  // @ViewChild('map') mapElement: ElementRef;
+  // map: any;
 
 
   constructor(public navCtrl: NavController, public geolocation: Geolocation) {

@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import  { NextPage } from '../next/next';
 import { Geolocation } from '@ionic-native/geolocation';
 import { RestProvider } from '../../providers/rest/rest';
-
+// import { Http, header, RequestOptions } from '@angular/common/http';
 
 
 
@@ -50,6 +50,7 @@ export class HomePage {
               this.users = data;
               console.log(this.users);
           });
+
     }
 
 
@@ -60,7 +61,7 @@ export class HomePage {
 
         console.log('Succes Saved');
       }, (err) => {
-        console.log(err);
+        console.log(err)
       });
 
     }
