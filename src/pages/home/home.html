@@ -11,7 +11,7 @@
 
 <ion-content padding>
 
-<!-- <button ion-button (click)="openNextPage()" id="openNextPage()">Lihat Peta</button> -->
+<button ion-button (click)="openNextPage()" id="openNextPage()">Lihat Peta</button>
 
     <ion-card>
         <ion-list inset>
@@ -25,20 +25,18 @@
           <form (ngSubmit)="saveUser()">
                 <ion-item>
                   <ion-label color="primary" floating>name</ion-label>
-                  <ion-input [(ngModel)]="user.namaTempat" name="namaTempat"></ion-input>
+                  <ion-input value="" [(ngModel)]="namaTempat" name="namaTempat"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-label color="primary" floating>{{latitude  }}</ion-label>
-                    <ion-input [(ngModel)]="user.latitude" name="latitude"></ion-input>
+                    <ion-label color="primary" floating>latitude</ion-label>
+                    <ion-input value="" [(ngModel)]="latitude" name="latitude">{{ latitude }}</ion-input>
                   </ion-item>
                   <ion-item>
-                      <ion-label color="primary" floating>{{ longitude }}</ion-label>
-                      <ion-input [(ngModel)]="user.longitude" name="longitude"></ion-input>
+                      <ion-label color="primary" floating>longlitude</ion-label>
+                      <ion-input value=" "[(ngModel)]="longitude" name="longitude">{{ longitude }}</ion-input>
                     </ion-item>
-                    <button ion-button full type="submit" (ngSubmit)="saveUser()">Save</button>
-                  </form>
-
-
+                    <button ion-button full type="submit" click="simpan()">Save</button>
+          </form>
     </ion-card>
 
 </ion-content>
