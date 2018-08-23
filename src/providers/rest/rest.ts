@@ -24,9 +24,10 @@ export class RestProvider {
     console.log('Hello RestProvider Provider');
   }
 
-  saveUser(data) {
+  saveUser(namaTempat, latitude, longitude) {
+    console.log("namaTempat = "+namaTempat, "latitude = "+latitude, "longitude ="+longitude);
     return new Promise((resolve, reject) => {
-      this.http.post(this.apiUrl+'/item', JSON.stringify(data))
+      this.http.post(this.apiUrl+'/item', JSON.stringify(namaTempat, latitude, longitude))
         .subscribe(res => {
           resolve(res);
         }, (err) => {
@@ -34,6 +35,7 @@ export class RestProvider {
         });
     });
   }
+
   getUsers() {
   return new Promise(resolve => {
     this.http.get(this.apiUrl+'/item').subscribe(data => {
@@ -44,13 +46,14 @@ export class RestProvider {
   });
 }
 
-postData(data){
-  this.http.post("localhost:8080/item", "some=parameter&another=parameter&and=another&one=parameter").subscribe(data => {
-      console.log(JSON.stringify(data.json()));
-  }, error => {
-      console.log(JSON.stringify(error.json()));
-  });
-}
+// postData(namaTempat, latitude, longitude){
+//   console.log("namaTempat = "+namaTempat, "latitude ="+latitude, "longitude ="+longitude);
+//   let param = { name: namaTempat, lati: latitude, longi: longitude };
+//   let url ="http:localhost:8080/item";
+//   let request = this.http.post(url, param);
+//   return request.toPromise();
+//
+// }
 
 
 

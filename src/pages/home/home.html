@@ -11,32 +11,40 @@
 
 <ion-content padding>
 
-<button ion-button (click)="openNextPage()" id="openNextPage()">Lihat Peta</button>
-
+<button ion-button (click)="openNextPage()">Lihat </button>
+<!-- <button ion-button (click)="openTrack()" id="openTrack()">Tess</button> -->
     <ion-card>
         <ion-list inset>
-            <ion-item *ngFor="let user of users">
-               <!-- <h1>{{ user.id_lokasi }}</h1>
-               <p>{{ user.namaTempat}}</p> -->
+            <!-- <ion-item *ngFor="let user of users">
+               <h1>{{ user.id_lokasi }}</h1>
+               <p>{{ user.namaTempat}}</p>
 
-            </ion-item>
+            </ion-item> -->
         </ion-list>
 
-          <form (ngSubmit)="saveUser()">
-                <ion-item>
-                  <ion-label color="primary" floating>name</ion-label>
-                  <ion-input value="" [(ngModel)]="namaTempat" name="namaTempat"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-label color="primary" floating>latitude</ion-label>
-                    <ion-input value="" [(ngModel)]="latitude" name="latitude">{{ latitude }}</ion-input>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label color="primary" floating>longlitude</ion-label>
-                      <ion-input value=" "[(ngModel)]="longitude" name="longitude">{{ longitude }}</ion-input>
-                    </ion-item>
-                    <button ion-button full type="submit" click="simpan()">Save</button>
+          <form (ngSubmit)="saveTracking()">
+            <ion-item>
+            <ion-label color="primary" floating>nama</ion-label>
+            <ion-input [(ngModel)]="tracking.namaTempat" name="namaTempat"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>latitude</ion-label>
+              <ion-select [(ngModel)]="tracking.latitude" name="latitude">
+                <ion-option value="{{ latitude }}">lat</ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-label>longlitude</ion-label>
+              <ion-select [(ngModel)]="tracking.longlitude" name="longlitude">
+                <ion-option value="{{ longlitude }}">long</ion-option>
+              </ion-select>
+            </ion-item>
+
+
+            <button ion-button full type="submit">Save</button>
           </form>
+
     </ion-card>
 
 </ion-content>

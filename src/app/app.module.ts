@@ -10,13 +10,18 @@ import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { RestProvider } from "../providers/rest/rest";
+import { TrackingService } from '../tracking/tracking.services';
 import  { NextPage } from '../pages/next/next';
+import { TrackingPage } from '../pages/tracking/tracking';
+import { AddTrackingPage } from '../pages/add-tracking/add-tracking';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    NextPage
+    NextPage,
+    TrackingPage,
+    AddTrackingPage,
   ],
   imports: [
     BrowserModule,
@@ -29,14 +34,18 @@ import  { NextPage } from '../pages/next/next';
   entryComponents: [
     MyApp,
     HomePage,
-    NextPage
+    NextPage,
+    TrackingPage,
+    AddTrackingPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Geolocation,
+    TrackingService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    RestProvider
+    RestProvider,
+
   ],
 
 
